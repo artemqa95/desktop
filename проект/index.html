@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Создание протоколов по неразрушающему контролю</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+<div class="header">Создание протокола</div>
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="sidebar-header">Входные данные</div>
+        <div class="sidebar-text">
+            <span class="sidebar-text-column">Номер протокола</span>
+            <span class="sidebar-text-add" onselectstart="return false"></span>
+            <span class="sidebar-text-column">Диапазон точек</span>
+        </div>
+        <div class="sidebar-fields">
+            <span class="numeric">№1</span><span class="sidebar-fields-inputcontainer">
+                    <input type="text" class="sidebar-fields-ordernumber">
+                </span>
+            <span class="sidebar-fields-remove" onselectstart="return false"
+                  onclick="this.parentNode.remove()">Удалить</span>
+            <span class="sidebar-fields-inputcontainer">
+                <input type="text" class="sidebar-fields-ranges">
+                </span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content-text">Представитель лаборатории</div>
+        <select name="nikimt" id="nikimt">
+            <option value="Козлов Е.Ю./Kozlov E.Yu.">Козлов Е.Ю./Kozlov E.Yu.</option>
+            <option value="Г.Р.Купутдинова/G.R. Kuputdinova">Г.Р.Купутдинова/G.R. Kuputdinova</option>
+            <option value="Стаценко И.О./Statsenko I.O.">Стаценко И.О./Statsenko I.O.</option>
+            <option selected value="Ласунов А.П/Lasunov A.P.">Ласунов А.П./Lasunov A.P.</option>
+            <option value="К.С.Котенко/K.S. Kotenko">К.С.Котенко/K.S. Kotenko</option>
+            <option value="Т.В.Храброва/T. V. Khrabrova">Т.В.Храброва/T. V. Khrabrova</option>
+            <option value="Н.И.Тенякова/N. I. Tenyakova">Н.И.Тенякова/N. I. Tenyakova</option>
+        </select>
+        <div class="content-text">Представитель АСЭ</div>
+        <select name="ase" id="ase">
+            <option value="В.Г. Петров/V. G. Petrov">В.Г. Петров/V. G. Petrov</option>
+            <option value="С.Е.Трембовецкий/S.E. Trembovetsky">С.Е.Трембовецкий/S.E. Trembovetsky</option>
+            <option value="Е.М.Пикула/E.M. Pikula">Е.М.Пикула/E.M. Pikula</option>
+            <option value="Е.А.Борисов/E.A. Borisov">Е.А.Борисов/E.A. Borisov</option>
+        </select>
+        <div class="content-text">Дата испытания</div>
+        <input type="date" class="content-date-field">
+        <div class="content-file">
+            <div class="content-file-in">
+                <div class="content-file-text">Путь к файлу с точками:</div>
+                <div class="content-file-path">none</div>
+                <br>
+                <div class="content-file-choose">Обзор</div>
+            </div>
+            <div class="content-file-out">
+                <div class="content-file-text">Путь вывода:</div>
+                <div class="content-file-path">none</div>
+                <br>
+                <div class="content-file-choose">Обзор</div>
+            </div>
+        </div>
+        <div class="content-create">
+            <div class="content-create-checkboxes" onselectstart="return false">
+                <div class="content-create-checkboxes-inner"><input type="checkbox" class="checkbox" size="100">Убрать одинаковые в файле с точками</div>
+                <div class="content-create-checkboxes-inner"><input type="checkbox" class="checkbox">Подогнать под интвервал</div>
+            </div>
+            <div class="content-crate-button" onselectstart="return false">Рассчитать и создать</div>
+        </div>
+    </div>
+    <div class="footer"> Примечание: <br>
+        Для работы необходимо закинуть реестр конструкций в папку с приложением. <br>
+        При открытии Excel файла необходимо нажать ctr+shift+alt+F9 для пересчета всех листов. <br>
+        Все excel-файлы, с которыми работает программа, должны иметь расширение xlsx. <br>
+        Лист в книге-шаблоне должен называться "Протокол". <br>
+        Лист в книге-реестре является листом за 2021 год. <br>
+    </div>
+</div>
+<script src="./public/files/render.js"></script>
+<script src="./public/files/core.js"></script>
+</body>
+</html>
